@@ -1,8 +1,10 @@
+import Sidebar from "./components/Sidebar/sidebar.tsx";
+
 function App() {
 
   return (
     <>
-      <h1 className="font-bold">Develop Branch</h1>
+      <Sidebar />
     </>
   )
 }

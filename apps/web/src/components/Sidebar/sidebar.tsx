@@ -61,7 +61,7 @@ const Sidebar = () => {
                 <div className="flex flex-col h-full">
                     {/* Header + Icon */}
                     <div className="p-4 border-b border-gray-200">
-                        <div className="flex items-center justify-center h-12">
+                        <div className={`flex items-center justify-center`}>
                             <img src={logo} alt="Logo" className="h-10 w-auto"/>
                             {isOpen ?  <h1 className="text-white font-bold">DevHub</h1> : null}
 
@@ -78,9 +78,9 @@ const Sidebar = () => {
                         <ul className="space-y-2 px-3">
                             {items.map((item) => (
                                 <li key={item.id}>
-                                    <button onClick={() => handleItemClick(item.id)} className={`w-full flex items-center px-3 py-2 rounded-lg transition-colors duration-200 ${
+                                    <button onClick={() => handleItemClick(item.id)} className={`${isOpen ? "w-full" : "w-12"} flex items-center px-3 py-2 rounded-lg transition-colors duration-200 ${
                                         activeItem === item.id
-                                            ? "bg-blue-500 text-white"
+                                            ? `bg-blue-500 text-white`
                                             : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                                     }`} aria-current={activeItem === item.id ? "page" : undefined}>
                                         <span className="text-xl">{item.icon}</span>
