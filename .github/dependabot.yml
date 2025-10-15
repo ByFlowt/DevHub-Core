@@ -1,0 +1,43 @@
+version: 2
+updates:
+  # Backend (Gradle)
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # Frontend (Next.js / pnpm) — uses npm ecosystem
+  - package-ecosystem: "npm"
+    directory: "/apps/web"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    # Optional: group common FE updates to reduce PR noise
+    groups:
+      next-and-react:
+        patterns:
+          - "next"
+          - "react*"
+          - "@types/react*"
+      tooling:
+        patterns:
+          - "eslint*"
+          - "typescript"
+          - "tailwindcss"
+          - "postcss*"
+          - "autoprefixer"
+
+  # JS SDK package (if present)
+  - package-ecosystem: "npm"
+    directory: "/packages/sdk-js"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
