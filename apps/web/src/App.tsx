@@ -2,7 +2,7 @@ function App() {
 
   return (
     <>
-      <h1 className="font-bold">Tobi</h1>
+      <h1 className="font-bold">Develop Branch</h1>
     </>
   )
 }
