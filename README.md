@@ -35,13 +35,13 @@ Clean interfaces and portable DAOs make it straightforward to evolve into multi-
 ## 🏗️ Architecture
 
 ### Backend
-- **Kotlin 2.x** + **Spring Boot 3.x** for the REST API and WebSocket server
+- **Kotlin 2.x** + **Ktor 3.x** for the REST API and WebSocket server
 - **SQLite** for local storage (modules, jobs, settings)
 - **Flyway** for schema migrations
 - **Gradle (KTS)** for build and dependency management
 
 ### Frontend
-- **Next.js 14** (App Router) + **React 18**
+- **Next.js 14** (App Router) + **React 18** + **TypeScript**
 - **Tailwind CSS** + **shadcn/ui** components
 - **Zustand** for client state management
 - Dark mode via class-based theming
@@ -249,17 +249,17 @@ Uses Playwright for full-stack testing.
 
 ## 🗺️ Roadmap
 
-### ✅ v0.1 — Foundation
+### 🚧 v0.1 — Foundation (Current)
 - Module discovery and management
 - Settings store with typed schemas
 - Basic UI shell with dark mode
 
-### ✅ v0.2 — Job System
+###  v0.2 — Job System
 - Job queue and worker
 - Live log streaming via WebSocket
 - Job status tracking and history
 
-### 🚧 v0.3 — Developer Experience (Current)
+###  v0.3 — Developer Experience 
 - Kotlin SDK for module development
 - TypeScript SDK for API integration
 - Comprehensive e2e test suite
