@@ -15,6 +15,7 @@ import {
 import { useEffect, useState } from "react";
 
 import logo from "../../assets/logo.png";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -52,11 +53,17 @@ const Sidebar = () => {
     { id: 9, name: "Extensions", icon: <Blocks />, path: "/extensions" },
   ];
 
-  const [activeItem, setActiveItem] = useState(items[0].id);
+  const location = useLocation()
+  const [activeItem, setActiveItem] = useState(() => {
+    const currentItem = items.find(item => item.path === location.pathname)
+      return currentItem?.id || items[0].id;
+  });
 
+  const navigate = useNavigate()
   const handleItemClick = (id: number) => {
     setActiveItem(id);
     if (isMobile) setIsOpen(false);
+    navigate(items[id - 1].path)
   };
   /*branch test*/
   return (
